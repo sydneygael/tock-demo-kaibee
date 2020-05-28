@@ -14,12 +14,13 @@ phases:
       - export IMAGE_TAG=$(cat pom.xml | grep "^    <version>.*</version>$" | awk -F'[><]' '{print $3}')
       - echo Application build completed on `date`
       - echo Docker images build started on `date`
-      - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/sydneygael/bot-demo -f webhook/Dockerfile .
+      - docker build -t sydneygael/bot-demo -f webhook/Dockerfile .
+      - docker tag sydneygael/bot-demo:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/sydneygael/bot-demo:latest
   post_build:
     commands:
       - echo Docker images build completed on `date`
       - echo Pushing the docker images...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/sydneygael/bot-demo
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/sydneygael/bot-demo:latest
       - echo Docker images pushed on `date`
       - echo Copy du Dockerrun adhoc
       - cp aws/buildspec.yml .
