@@ -25,9 +25,7 @@ phases:
       - echo Copy du Dockerrun adhoc
       - cp aws/buildspec.yml .
       - cp aws/Dockerrun.aws.json Dockerrun.aws.json
-      - sed -i 's/${IMAGE_TAG}/'"$IMAGE_TAG"'/g' Dockerrun.aws.json
 artifacts:
   files:
-    - Dockerrun.aws.json
     - buildspec.yml
     - Dockerrun.aws.json

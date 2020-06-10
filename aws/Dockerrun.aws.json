@@ -1,17 +1,12 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "containerDefinitions": [
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "798860038606.dkr.ecr.us-east-2.amazonaws.com/sydneygael/bot-demo:latest",
+    "Update": "true"
+  },
+  "Ports": [
     {
-      "name": "bot-demo",
-      "image": "798860038606.dkr.ecr.us-east-2.amazonaws.com/sydneygael/bot-demo:latest",
-      "memoryReservation": 1792,
-      "environment" : [],
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 8080
-        }
-      ]
+      "ContainerPort": "8080"
     }
   ]
 }
