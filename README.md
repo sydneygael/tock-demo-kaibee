@@ -1,7 +1,7 @@
-Source code contains :
+Pour commencer , il faut comprendre la technologie Tock en lisant ce [document](doc/Présentation%20de%20Tock.pdf) 
 
-- A sample html file for the chat widget : [web/index.html](web/index.html)
-- Simple kotlin-based bot implementation
+- Un widget web pour parler avec le bot : [web/index.html](web/index.html)
+- Les classes principales :
     - [common](common/src/main/kotlin/bot.kt)
     - [websocket](websocket/src/main/kotlin/StartWebsocket.kt) 
     - [webhook](webhook/src/main/kotlin/StartWebhook.kt)
